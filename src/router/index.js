@@ -1,14 +1,8 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-
-// Import the components for different routes
+import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../components/HomePage.vue';
 import ServicesPage from '../components/ServicesPage.vue';
 import AboutPage from '../components/AboutPage.vue';
 import ContactPage from '../components/ContactPage.vue';
-
-// Tell Vue to use VueRouter
-Vue.use(VueRouter)
 
 // Define the routes
 const routes = [
@@ -19,9 +13,9 @@ const routes = [
 ];
 
 // Create and export the router instance
-const router = new VueRouter({
-  mode: 'history',
+const router = createRouter({
+  history: createWebHistory(),
   routes
-})
+});
 
-export default router
+export default router;

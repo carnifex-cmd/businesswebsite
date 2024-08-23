@@ -1,10 +1,15 @@
 <template>
     <div></div>
+    <HomeHeader></HomeHeader>
   <!-- Your Home template here -->
 </template>
 
 <script>
+import HomeHeader from './HomeHeader.vue'
 export default {
-  name: 'HomePage'
+  name: 'HomePage',
+  components: {
+    HomeHeader
+  },
 }
 </script>
