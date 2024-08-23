@@ -25,7 +25,6 @@
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem;
-    border-radius: .6rem;
   }
   .navbar ul {
     font-family: 'Roboto', sans-serif;

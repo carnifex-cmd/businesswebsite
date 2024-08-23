@@ -1,5 +1,4 @@
 <template>
-    <div></div>
     <HomeHeader></HomeHeader>
   <!-- Your Home template here -->
 </template>
