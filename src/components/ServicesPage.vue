@@ -25,7 +25,6 @@
           </div>
       </div>
     </div>
-    <!-- Your Services template here -->
   </template>
   
   <script>
@@ -57,6 +56,21 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     flex: 1;
+  }
+
+  @media screen and (max-width: 768px) {
+    .services-card{
+      height:auto;
+    }
+    h1{
+      padding-top:2rem;
+    }
+    .infoCards{
+      margin-top:2rem;
+      display:flex;
+      flex-direction:column;
+      gap:1.5rem;
+    }
   }
   
   </style>

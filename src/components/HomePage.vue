@@ -3,7 +3,7 @@
     <img 
       class = 'heroImage'
       src="../assets/Designer.jpeg">
-  <!-- Your Home template here -->
+
 </template>
 
 <script>

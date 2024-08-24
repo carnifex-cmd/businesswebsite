@@ -8,7 +8,6 @@
         <p>Shri Siddhivinayak Waterproofing is one of the leading providers of maintenance and waterproofing services for societies and commercial buildings. With years of experience and a commitment to excellence, we ensure that your buildings remain in top condition, protected from the elements and structural issues.</p>
       </div>
     </section>
-    <!-- Your About template here -->
   </template>
   
   <script>
@@ -44,5 +43,19 @@
     h1{
       font-size:1.875rem;
     }
+
+  @media screen and (max-width: 768px) {
+    .about{
+      flex-direction:column;
+      gap:0;
+      padding-top:2rem;
+    }
+    .about-content{
+      margin:1rem;
+    }
+    .about-image{
+      display:none;
+    }
+  }
   </style>
   

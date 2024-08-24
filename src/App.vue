@@ -1,8 +1,11 @@
 <template>
-  <HomePage></HomePage>
-  <ServicesPage></ServicesPage>
-  <AboutPage></AboutPage>
-  <ContactPage></ContactPage>
+  <div class="hide-scrollbar">
+    <HomePage></HomePage>
+    <ServicesPage></ServicesPage>
+    <AboutPage></AboutPage>
+    <ContactPage></ContactPage>
+    <PageFooter></PageFooter>
+  </div>
 </template>
 
 <script>
@@ -10,6 +13,7 @@ import HomePage from './components/HomePage.vue'
 import ServicesPage from './components/ServicesPage.vue'
 import ContactPage from './components/ContactPage.vue'
 import AboutPage from  './components/AboutPage.vue'
+import PageFooter from './components/PageFooter.vue'
 
 export default {
   name: 'App',
@@ -18,6 +22,7 @@ export default {
     ServicesPage,
     ContactPage,
     AboutPage,
+    PageFooter
   }
 }
 </script>
