@@ -1,15 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="hide-scrollbar">
+    <HomePage></HomePage>
+    <ServicesPage></ServicesPage>
+    <AboutPage></AboutPage>
+    <ContactPage></ContactPage>
+    <PageFooter></PageFooter>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HomePage from './components/HomePage.vue'
+import ServicesPage from './components/ServicesPage.vue'
+import ContactPage from './components/ContactPage.vue'
+import AboutPage from  './components/AboutPage.vue'
+import PageFooter from './components/PageFooter.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HomePage,
+    ServicesPage,
+    ContactPage,
+    AboutPage,
+    PageFooter
   }
 }
 </script>
@@ -21,6 +34,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
 }
 </style>
