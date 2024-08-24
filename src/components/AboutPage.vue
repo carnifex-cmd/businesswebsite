@@ -31,6 +31,7 @@
       flex-direction:row;
       text-align:left;
       font-weight:400;
+      margin-right:0.5rem;
     }
     .about-image{
       flex-direction:row;
