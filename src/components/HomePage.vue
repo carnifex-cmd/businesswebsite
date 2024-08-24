@@ -1,5 +1,8 @@
 <template>
     <HomeHeader></HomeHeader>
+    <img 
+      class = 'heroImage'
+      src="../assets/Designer.jpeg">
   <!-- Your Home template here -->
 </template>
 
@@ -12,3 +15,10 @@ export default {
   },
 }
 </script>
+<style scoped>
+.heroImage{
+  height: 24rem;
+  width: 100%;
+  margin:0;
+}
+</style>
