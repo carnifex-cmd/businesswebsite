@@ -11,25 +11,61 @@
         </ul>
       </div>
       <div class="get-in-touch">
-        <form class="contact-form">
+        <form class="contact-form" @submit.prevent="submitForm">
           <p class="name">Name</p>
-          <input type="text" class="name-textbox" placeholder="Your Name" />
+          <input v-model="form.name" type="text" class="name-textbox" placeholder="Your Name" />
           <p class="email">Email</p>
-          <input type="email" class="email-textbox" placeholder="Your Email" />
+          <input v-model="form.email" type="email" class="email-textbox" placeholder="Your Email" />
           <p class="message">Message</p>
-          <textarea class="message-textbox" placeholder="Enter a message for us"></textarea>
+          <textarea v-model="form.message" class="message-textbox" placeholder="Enter a message for us"></textarea>
           <button type="submit" class="send-message-button">Send Message</button>
         </form>
       </div>
     </div>
   </section>
 </template>
-  
+
 <script>
-  export default {
-    name: 'ContactPage'
+export default {
+  name: 'ContactPage',
+  data() {
+    return {
+      form: {
+        name: '',
+        email: '',
+        message: ''
+      }
+    };
+  },
+  methods: {
+    async submitForm() {
+      try {
+        const response = await fetch('http://localhost:3000/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(this.form)
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to send email');
+        }
+        else if(response.ok){
+          alert('Email sent successfully');
+          this.form.name = '';
+          this.form.email = '';
+          this.form.message = '';
+        }
+      } catch (error) {
+        console.error('Error sending email:', error);
+        alert('Failed to send email');
+      }
+    }
   }
+}
 </script>
+
 <style scoped>
   #contact {
     padding: 2rem;
@@ -73,9 +109,9 @@
 
   .name,
   .email,
-  .message{
-    text-align:left;
-    margin:.25rem;
+  .message {
+    text-align: left;
+    margin: .25rem;
   }
 
   .name-textbox,
@@ -85,7 +121,7 @@
     border: 0.5px solid lightgray;
     border-radius: 5px;
     text-indent: 0.7rem;
-    outline:none;
+    outline: none;
   }
 
   .message-textbox {
@@ -128,7 +164,7 @@
     border: 1px solid #2563EB;
     border-radius: 5px;
     transition: background-color 0.3s;
-    cursor:pointer;
+    cursor: pointer;
     margin-bottom: 4rem;
   }
 
@@ -138,10 +174,10 @@
   }
 
   @media screen and (max-width: 768px) {
-    .contact-content{
-      display:flex;
-      flex-direction:column;
-      gap:2rem;
+    .contact-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
     }
   }
 </style>
