@@ -1,8 +1,10 @@
 <template>
+  <section id="home">
     <HomeHeader></HomeHeader>
     <img 
       class = 'heroImage'
       src="../assets/Designer.jpeg">
+  </section>
 
 </template>
 

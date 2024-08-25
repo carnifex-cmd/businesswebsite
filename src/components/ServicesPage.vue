@@ -1,4 +1,5 @@
 <template>
+  <section id="services">
     <div class="services-card">
       <h1>Our Services</h1>
       <div class="infoCards">
@@ -25,7 +26,8 @@
           </div>
       </div>
     </div>
-  </template>
+  </section>
+</template>
   
   <script>
   export default {
@@ -56,6 +58,12 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     flex: 1;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+  .card:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
   }
 
   @media screen and (max-width: 768px) {
