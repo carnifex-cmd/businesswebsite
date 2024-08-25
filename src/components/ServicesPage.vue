@@ -1,4 +1,5 @@
 <template>
+  <section id="services">
     <div class="services-card">
       <h1>Our Services</h1>
       <div class="infoCards">
@@ -25,7 +26,8 @@
           </div>
       </div>
     </div>
-  </template>
+  </section>
+</template>
   
   <script>
   export default {

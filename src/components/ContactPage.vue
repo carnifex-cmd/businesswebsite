@@ -1,5 +1,5 @@
 <template>
-  <section class="contact">
+  <section id="contact">
     <h2>Contact Us</h2>
     <div class="contact-content">
       <div class="contact-info">
@@ -31,7 +31,7 @@
   }
 </script>
 <style scoped>
-  .contact {
+  #contact {
     padding: 2rem;
     background-color: #f1f1f1;
     font-family: 'Roboto', sans-serif;

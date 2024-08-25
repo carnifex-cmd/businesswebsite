@@ -3,10 +3,10 @@
       <nav class="navbar">
         <div class="logo">Shri Siddhivinayak Waterproofing</div>
         <ul>
-          <li><router-link to="/">Home</router-link></li>
-          <li><router-link to="/services">Services</router-link></li>
-          <li><router-link to="/about">About Us</router-link></li>
-          <li><router-link to="/contact">Contact Us</router-link></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
         </ul>
       </nav>
     </header>

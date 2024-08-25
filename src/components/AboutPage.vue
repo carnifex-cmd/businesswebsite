@@ -1,5 +1,5 @@
 <template>
-    <section class="about">
+    <section id="about">
       <div class="about-image">
         <img src="../assets/Designer.jpeg">
       </div>
@@ -16,7 +16,7 @@
   }
   </script>
   <style>
-    .about {
+    #about {
       font-family: 'Roboto', sans-serif;
       font-weight: 800;
       text-align: center;
