@@ -18,7 +18,7 @@
           <input v-model="form.email" type="email" class="email-textbox" placeholder="Your Email" />
           <p class="message">Message</p>
           <textarea v-model="form.message" class="message-textbox" placeholder="Enter a message for us"></textarea>
-          <button type="submit" class="send-message-button">Send Message</button>
+          <button type="submit" :disabled="submitButtonDisabled" class="send-message-button">Send Message</button>
         </form>
       </div>
     </div>
@@ -33,21 +33,31 @@ export default {
       form: {
         name: '',
         email: '',
-        message: ''
-      }
+        message: '',
+      },
+      submitButtonDisabled:false
     };
   },
   methods: {
     async submitForm() {
+      this.submitButtonDisabled=true;
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => {
+        controller.abort();
+      }, 3000); // 3 seconds
+    
       try {
         const response = await fetch('https://siddhivinayakbackend.onrender.com/send-email', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(this.form)
+          body: JSON.stringify(this.form),
+          signal: controller.signal
         });
-
+    
+        clearTimeout(timeoutId); // clear the timeout if the fetch call is successful
+    
         if (!response.ok) {
           throw new Error('Failed to send email');
         }
@@ -58,8 +68,16 @@ export default {
           this.form.message = '';
         }
       } catch (error) {
-        console.error('Error sending email:', error);
-        alert('Failed to send email');
+        if (error.name === 'AbortError') {
+          console.error('Timeout error: fetch call took longer than 3 seconds');
+          alert('Failed to send email due to timeout');
+        } else {
+          console.error('Error sending email:', error);
+          alert('Failed to send email');
+        }
+      }
+      finally{
+        this.submitButtonDisabled=false;
       }
     }
   }
@@ -171,6 +189,12 @@ export default {
   .send-message-button:hover {
     background-color: #1E40AF;
     border-color: #1E40AF;
+  }
+
+  .send-message-button:disabled {
+    background-color: #B2B2B2;
+    border-color: #B2B2B2;
+    cursor: not-allowed;
   }
 
   @media screen and (max-width: 768px) {
