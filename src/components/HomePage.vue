@@ -19,6 +19,23 @@
         <p>Safeguarding Your Home with Comprehensive Solutions</p>
       </div>
     </div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <h2>Completed Projects</h2>
+      <div class="project-cards">
+        <div class="card">
+          <!-- <img src="../assets/project1.jpg" alt="Project 1" class="card-img"> -->
+          <div class="card-body">
+            <h3 class="card-title">IITC Kanjur Pvt.Ltd</h3>
+            <p class="card-location">Kanjur Marg</p>
+            <p class="card-description">External Wall of 300,000 Sq.ft waterproofing with Dr.Fixit Raincoat</p>
+            <p class="card-amount">₹1,25,00,000</p>
+          </div>
+        </div>
+        <!-- Repeat similar structure for other projects -->
+      </div>
+    </section>
   </section>
 </template>
 
@@ -133,10 +150,69 @@ export default {
 
   .mobile-image {
     display: block; /* Show the specific image on smaller devices */
+  }
+}
 
-  }
-  .heroImage{
-    width:auto;
-  }
+/* Projects Section */
+.projects-section {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.projects-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.project-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 300px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.card-location {
+  color: #666;
+  font-size: 1rem;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.card-amount {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
 }
 </style>
