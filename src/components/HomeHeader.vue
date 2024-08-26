@@ -70,6 +70,7 @@ export default {
 
 .mobile-menu {
   display: none;
+  z-index:333;
 }
 
 @media (max-width: 768px) {
