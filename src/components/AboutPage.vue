@@ -57,7 +57,7 @@
     }
 
   @media screen and (max-width: 768px) {
-    .about{
+    #about{
       flex-direction:column;
       gap:0;
       padding-top:2rem;
