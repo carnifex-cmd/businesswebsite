@@ -16,12 +16,11 @@
       <!-- Text Overlay -->
       <div class="overlay">
         <h1>Your Trusted Repair Experts</h1>
-        <p>Safeguarding Your Home with Comprehensive Solutions</p>
+        <p>Safeguarding Your Property with Comprehensive Solutions</p>
       </div>
     </div>
   </section>
 </template>
-
 <script>
 import HomeHeader from './HomeHeader.vue'
 
@@ -31,11 +30,22 @@ export default {
     HomeHeader
   },
   mounted() {
-    if (window.innerWidth >= 1024) { // Desktop devices
-      this.startSlideshow();
-    }
+    this.handleSlideshow();
+    window.addEventListener('resize', this.handleSlideshow);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleSlideshow);
   },
   methods: {
+    handleSlideshow() {
+      if (window.innerWidth >= 1024) { // Desktop devices
+        this.startSlideshow();
+        document.querySelectorAll('.mobile-image').forEach(el => el.style.display = 'none');
+      } else { // Mobile devices
+        document.querySelectorAll('.slide').forEach(el => el.style.display = 'none');
+        document.querySelector('.mobile-image').style.display = 'block';
+      }
+    },
     startSlideshow() {
       let slideIndex = 0;
       const slides = document.getElementsByClassName("slide");
@@ -57,7 +67,6 @@ export default {
   }
 }
 </script>
-
 <style scoped>
 .hero-slideshow {
   position: relative;
@@ -82,7 +91,8 @@ export default {
 }
 
 .mobile-image {
-  display: none; /* Hide mobile-specific image by default */
+  display: none;
+  width: max-content !important;/* Hide mobile-specific image by default */
 }
 
 .heroImage {
