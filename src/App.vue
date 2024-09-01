@@ -3,6 +3,7 @@
     <HomePage></HomePage>
     <ServicesPage></ServicesPage>
     <AboutPage></AboutPage>
+    <ProjectsPage></ProjectsPage>
     <ContactPage></ContactPage>
     <PageFooter></PageFooter>
   </div>
@@ -13,6 +14,7 @@ import HomePage from './components/HomePage.vue'
 import ServicesPage from './components/ServicesPage.vue'
 import ContactPage from './components/ContactPage.vue'
 import AboutPage from  './components/AboutPage.vue'
+import ProjectsPage from './components/Projects.vue'
 import PageFooter from './components/PageFooter.vue'
 
 export default {
@@ -22,6 +24,7 @@ export default {
     ServicesPage,
     ContactPage,
     AboutPage,
+    ProjectsPage,
     PageFooter
   }
 }

@@ -1,20 +1,32 @@
 <template>
     <section id="about">
       <div class="about-image">
-        <img src="../assets/Designer.jpeg">
+        <img class="about-image" src="../assets/Designer.jpeg">
       </div>
       <div class="about-content">
         <h1>About Us</h1>
-        <p>Shri Siddhivinayak Waterproofing is one of the leading providers of maintenance and waterproofing services for societies and commercial buildings. With years of experience and a commitment to excellence, we ensure that your buildings remain in top condition, protected from the elements and structural issues.</p>
+        <div v-html="aboutUsText"></div>
       </div>
     </section>
   </template>
-  
+
   <script>
   export default {
-    name: 'AboutPage'
+    name: 'AboutUsPage',
+    data() {
+      return {
+        aboutUsText: `
+          Shri Siddhivinayak Waterproofing is one of the leading providers of maintenance and waterproofing services for societies, commercial buildings, offices, and factories.
+          With years of experience and a commitment to excellence, we ensure that your buildings remain in top condition, protected from the elements and structural issues.<br><br>
+          Our team of skilled professionals uses advanced techniques and high-quality materials to deliver reliable waterproofing solutions tailored to your needs.
+          We pride ourselves on our customer-focused approach, working closely with clients to deliver results that not only meet but exceed expectations.
+          Whether it's preventing future water intrusion or addressing existing issues, Shri Siddhivinayak Waterproofing is your trusted partner in protecting your property.
+        `
+      };
+    }
   }
   </script>
+  
   <style>
     #about {
       font-family: 'Roboto', sans-serif;
@@ -30,14 +42,14 @@
       flex-direction:row;
       text-align:left;
       font-weight:400;
-      margin-right:0.5rem;
+      margin-right:1rem;
     }
     .about-image{
       flex-direction:row;
       width:600px;
       height:400px;
     }
-    img{
+    .about-image{
       width:inherit;
     }
     h1{

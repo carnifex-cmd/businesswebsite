@@ -19,23 +19,6 @@
         <p>Safeguarding Your Home with Comprehensive Solutions</p>
       </div>
     </div>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-      <h2>Completed Projects</h2>
-      <div class="project-cards">
-        <div class="card">
-          <!-- <img src="../assets/project1.jpg" alt="Project 1" class="card-img"> -->
-          <div class="card-body">
-            <h3 class="card-title">IITC Kanjur Pvt.Ltd</h3>
-            <p class="card-location">Kanjur Marg</p>
-            <p class="card-description">External Wall of 300,000 Sq.ft waterproofing with Dr.Fixit Raincoat</p>
-            <p class="card-amount">₹1,25,00,000</p>
-          </div>
-        </div>
-        <!-- Repeat similar structure for other projects -->
-      </div>
-    </section>
   </section>
 </template>
 
@@ -151,25 +134,6 @@ export default {
   .mobile-image {
     display: block; /* Show the specific image on smaller devices */
   }
-}
-
-/* Projects Section */
-.projects-section {
-  padding: 2rem;
-  background-color: #f9f9f9;
-}
-
-.projects-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.project-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
 }
 
 .card {
