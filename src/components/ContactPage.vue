@@ -47,7 +47,7 @@ export default {
       }, 3000); // 3 seconds
     
       try {
-        const response = await fetch('https://siddhivinayakbackend.onrender.com/send-email', {
+        const response = await fetch('https://siddhivinayakbackend-production.up.railway.app/send-email', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
