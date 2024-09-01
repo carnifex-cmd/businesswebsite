@@ -48,6 +48,7 @@
       flex-direction:row;
       width:600px;
       height:400px;
+      padding-bottom:4rem;
     }
     .about-image{
       width:inherit;
@@ -61,10 +62,21 @@
       flex-direction:column;
       gap:0;
       padding-top:2rem;
+      padding-bottom:2rem;
     }
     .about-content{
       margin:1rem;
     }
+    .about-image{
+      display:none;
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    #about{
+      padding:4rem;
+    }
+    
     .about-image{
       display:none;
     }
