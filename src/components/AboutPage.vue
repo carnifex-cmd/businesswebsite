@@ -29,7 +29,6 @@
   
   <style>
     #about {
-      font-family: 'Roboto', sans-serif;
       font-weight: 800;
       text-align: center;
       background:#DDDDDD;
@@ -61,8 +60,7 @@
     #about{
       flex-direction:column;
       gap:0;
-      padding-top:2rem;
-      padding-bottom:2rem;
+      padding:2rem;
     }
     .about-content{
       margin:1rem;

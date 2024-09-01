@@ -1,6 +1,11 @@
+
+Copy code
 <template>
     <section id="projects" class="projects-section">
         <h2>Completed Projects</h2>
+        <p class="intro-text">
+            Over the years, we have worked on numerous projects, and here are some of them with their approximate invoice value.
+        </p>
         <div class="project-cards">
             <div 
                 v-for="(project, index) in projects" 
@@ -103,6 +108,13 @@ export default {
   margin-bottom: 2rem;
   text-align: center;
   color: #333;
+}
+
+.intro-text {
+  font-size: 1.125rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .project-cards {
