@@ -44,7 +44,7 @@ export default {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => {
         controller.abort();
-      }, 3000); // 3 seconds
+      }, 5000); // 5 seconds
     
       try {
         const response = await fetch('https://siddhivinayakbackend-production.up.railway.app/send-email', {
