@@ -1,98 +1,55 @@
-
-Copy code
 <template>
-    <section id="projects" class="projects-section">
-        <h2>Completed Projects</h2>
-        <p class="intro-text">
-            Over the years, we have worked on numerous projects, and here are some of them with their approximate invoice value.
-        </p>
-        <div class="project-cards">
-            <div 
-                v-for="(project, index) in projects" 
-                :key="index" 
-                class="card"
-            >
-                <div class="card-body">
-                    <h3 class="card-title">{{ project.title }}</h3>
-                    <p class="card-location">{{ project.location }}</p>
-                    <p class="card-description">{{ project.description }}</p>
-                    <p class="card-amount">{{ project.amount }}</p>
-                </div>
-            </div>
+  <section id="projects" class="projects-section">
+    <h2>Completed Projects</h2>
+    <p class="intro-text">
+      Over the years, we have worked on numerous projects, and here are some of them with their approximate invoice value.
+    </p>
+    <div class="project-cards">
+      <div
+        v-for="(project, index) in displayedProjects"
+        :key="index"
+        class="card"
+      >
+        <div class="card-body">
+          <h3 class="card-title">{{ project.title }}</h3>
+          <p class="card-location">{{ project.location }}</p>
+          <p class="card-description">{{ project.description }}</p>
+          <p class="card-amount">{{ project.amount }}</p>
         </div>
-        <p class="more-projects">...and many more.</p>
-    </section>
+      </div>
+    </div>
+    <div class="toggle-buttons">
+      <button v-if="!showAll" class="toggle-button" @click="toggleProjects">
+        Show More
+      </button>
+      <button v-else class="toggle-button" @click="toggleProjects">
+        Show Less
+      </button>
+    </div>
+  </section>
 </template>
 
 <script>
+import {projects} from '../lib/projectsData.js';
+
 export default {
   name: 'ProjectsPage',
   data() {
     return {
-      projects: [
-        {
-          title: "IITC Kanjur Pvt. Ltd.",
-          location: "Kanjur Marg",
-          description: "Waterproofing the external wall of a 300,000 sq.ft building using Dr. Fixit Raincoat.",
-          amount: "₹1,25,00,000"
-        },
-        {
-          title: "IITC Kanjur Pvt. Ltd.",
-          location: "Kanjur Marg",
-          description: "Terrace waterproofing of 10,000 sq.ft with Brick-bat coba treatment.",
-          amount: "₹30,00,000"
-        },
-        {
-          title: "Kesar Residency Co-op. Hsg. Soc. Ltd.",
-          location: "Charkop, Kandivali",
-          description: "Complete waterproofing and painting of a 400,000 sq.ft residential building.",
-          amount: "₹60,00,000"
-        },
-        {
-          title: "Manish Lotus Co-op. Hsg. Soc. Ltd.",
-          location: "D.N. Nagar, Andheri",
-          description: "Waterproofing and replastering of external and internal walls, covering 75,000 sq.ft.",
-          amount: "₹40,00,000"
-        },
-        {
-          title: "N.G. Park Co-op. Hsg. Soc. Ltd.",
-          location: "Rawalpada, Borivali-East",
-          description: "Comprehensive building restoration including waterproofing, structural repairs, and internal painting of 100,000 sq.ft.",
-          amount: "₹40,00,000"
-        },
-        {
-          title: "Andheri Jumbo Co-op. Hsg. Soc. Ltd.",
-          location: "Kol Dongari, Andheri",
-          description: "Waterproofing and painting of a 40,000 sq.ft residential building.",
-          amount: "₹30,00,000"
-        },
-        {
-          title: "Topiwala Co-op. Hsg. Soc. Ltd.",
-          location: "Goregaon - West",
-          description: "Complete waterproofing, structural repair, and internal painting of a 30,000 sq.ft building.",
-          amount: "₹30,00,000"
-        },
-        {
-          title: "Vishnu Bhagwan Co-op. Hsg. Soc. Ltd.",
-          location: "Andheri-West",
-          description: "Building-wide waterproofing, structural repair, and replastering of 80,000 sq.ft.",
-          amount: "₹30,00,000"
-        },
-        {
-          title: "Bunglow - Dias",
-          location: "Mitchawki, Malad",
-          description: "Waterproofing, painting, and plumbing work covering 21,000 sq.ft (including terrace).",
-          amount: "₹22,00,000"
-        },
-        {
-          title: "Bunglow - Hebron",
-          location: "Mitchawki, Malad",
-          description: "Comprehensive waterproofing, painting, and plumbing for a 18,000 sq.ft property, including terrace.",
-          amount: "₹20,00,000"
-        }
-      ]
+      showAll: false,
+      projects: projects
     };
-  }
+  },
+  computed: {
+    displayedProjects() {
+      return this.showAll ? this.projects : this.projects.slice(0, 5);
+    },
+  },
+  methods: {
+    toggleProjects() {
+      this.showAll = !this.showAll;
+    },
+  },
 }
 </script>
 
@@ -170,6 +127,29 @@ export default {
   margin-top: auto;
   text-align: center;
 }
+
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.toggle-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #555;
+}
+
 
 .more-projects {
   margin-top: 2rem;
