@@ -22,7 +22,7 @@
       <button v-if="!showAll" class="toggle-button" @click="toggleProjects">
         Show More
       </button>
-      <button v-else class="toggle-button" @click="toggleProjects">
+      <button v-else class="toggle-button fixed-toggle-button" @click="toggleProjects">
         Show Less
       </button>
     </div>
@@ -150,11 +150,11 @@ export default {
   background-color: #555;
 }
 
+.fixed-toggle-button {
+  position: fixed;
+  bottom: 2rem; /* Adjust as needed */
+  z-index: 1000; /* Ensure it is above other content */
 
-.more-projects {
-  margin-top: 2rem;
-  text-align: center;
-  font-size: 1.2rem;
-  color: #666;
 }
+
 </style>
